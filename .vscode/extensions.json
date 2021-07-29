@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint", // Eslint, essential
+    "msjsdiag.debugger-for-chrome", // Chrome debugger, nice to have
+    "glen-84.sass-lint", // Sass lint, essential
+    "EditorConfig.EditorConfig", // EditorConfig, essential,
+    "mrmlnc.vscode-scss", // Sass IntelliSense
+    "samuelcolvin.jinjahtml" // HubSpot syntax color code, nice to have
+  ]
+}

@@ -1,0 +1,74 @@
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: #{$heading-font};
+  margin: 1.5em 0 0.5em 0;
+}
+
+h1 {
+  font-size: 62px;
+}
+
+@mixin heading-1 {
+  font-size: 48px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  line-height: 62px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 62px;
+    line-height: 78px;
+  }
+}
+
+h2 {
+  font-size: 48px;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+@mixin bolding {
+  font-weight: 700;
+  line-height: 22px;
+}
+
+@mixin lead-text {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+@mixin intro-text {
+  font-size: 24px;
+  letter-spacing: 2px;
+  line-height: 29px;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+a {
+  color: var(--color-link);
+}
+
+li {
+  font-size: 16px;
+  margin-bottom: 0.5em;
+}
+
+.text-red {
+  color: var(--red);
+}

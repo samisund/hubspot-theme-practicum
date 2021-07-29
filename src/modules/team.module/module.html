@@ -1,0 +1,24 @@
+<!-- module html  -->
+<section class="team">
+  <div class="container">
+    <h1>{{ module.headline }}</h1>
+    <div class="team__members">
+      {% for member in module.members %}
+        <div class="member">
+          {% if member.member_photo.src %}
+          {% set sizeAttrs = 'width="{{ member.member_photo.width }}" height="{{ member.member_photo.height }}"' %}
+          {% if member.member_photo.size_type == 'auto' %}
+            {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+          {% elif member.member_photo.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ member.member_photo.max_width }}" height="{{ member.member_photo.max_height }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = member.member_photo.loading != 'disabled' ? 'loading="{{ member.member_photo.loading }}"' : '' %}
+          <img class="member__photo" src="{{ member.member_photo.src }}" alt="{{ member.member_photo.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+        <p class="member__name">{{ member.member_name }}</p>
+        <p class="member__jobtitle">{{ member.member_jobtitle }}</p>
+        </div>
+    {% endfor %}
+    </div>
+  </div>
+</section>

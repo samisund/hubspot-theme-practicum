@@ -1,0 +1,25 @@
+.team__members {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.team__members .member__photo {
+  max-height: 180px;
+  object-fit: cover;
+  width: 100%;
+}
+
+@media only screen and (min-width: 900px) {
+
+  .team__members {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+
+  .team__members {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

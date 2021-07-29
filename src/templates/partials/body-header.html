@@ -1,0 +1,17 @@
+<!--
+  templateType: global_partial
+  label: Body Header
+-->
+
+
+<header class="header">
+  <div class="container">
+    {% logo "header_logo" width='200', heading_level='h1', overrideable=True, alt='A clear and bold header', label='Logo or name', extra_classes='header__logo' %}
+    {% text "header_quote" label="Simple quote", value="This is the default value for this text field", extra_classes='header__quote' %}
+    <nav>
+      {% widget_block simple_menu "header_navigation" overrideable=True, orientation='horizontal', label='Main navigation', extra_classes='header__menu'  %}
+        {% widget_attribute "menu_tree" is_json=True %}[{"contentType": null, "subCategory": null, "pageLinkName": null, "pageLinkId": null, "isPublished": false, "categoryId": null, "linkParams": null, "linkLabel": "Home", "linkTarget": null, "linkUrl": "http://www.hubspot.com", "children": [], "isDeleted": false}, {"contentType": null, "subCategory": null, "pageLinkName": null, "pageLinkId": null, "isPublished": false, "categoryId": null, "linkParams": null, "linkLabel": "About", "linkTarget": null, "linkUrl": "http://www.hubspot.com/internet-marketing-company", "children": [], "isDeleted": false}, {"contentType": null, "subCategory": null, "pageLinkName": null, "pageLinkId": null, "isPublished": false, "categoryId": null, "linkParams": null, "linkLabel": "Pricing", "linkTarget": null, "linkUrl": "http://www.hubspot.com/pricing", "children": [], "isDeleted": false}]{% end_widget_attribute %}
+      {% end_widget_block %}
+    </nav>
+  </div>
+</header>

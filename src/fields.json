@@ -1,0 +1,66 @@
+[
+  {
+    "type": "group",
+    "name": "colors",
+    "label": "Colors",
+    "children": [
+      {
+        "name": "primary_color",
+        "label": "Primary color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "default": {
+          "color": "#f2cd00",
+          "opacity": 100
+        }
+      },
+      {
+        "name": "secondary_color",
+        "label": "Secondary color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "default": {
+          "color": "#ff0000",
+          "opacity": 100
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "typography",
+    "label": "Typography",
+    "children": [
+      {
+        "type": "font",
+        "name": "headings",
+        "label": "Headings",
+        "load_external_fonts": true,
+        "default": {
+          "color": "#000",
+          "font": "Montserrat",
+          "font_set": "GOOGLE",
+          "variant": "700",
+          "size": 48,
+          "size_unit" : "px"
+        }
+      },
+      {
+        "type": "font",
+        "name": "text",
+        "label": "Text",
+        "load_external_fonts": true,
+        "default": {
+          "color": "#000",
+          "font": "Montserrat",
+          "font_set": "GOOGLE",
+          "variant": "400",
+          "size": 16,
+          "size_unit" : "px"
+        }
+      }
+    ]
+  }
+]

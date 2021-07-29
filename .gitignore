@@ -1,0 +1,15 @@
+# Gulp
+dist/
+node_modules/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+.sublime-gulp.cache
+
+# Other
+**/.sass-cache/
+*.log
+**/.DS_Store
+.vscode/**/*
+!.vscode/*.json

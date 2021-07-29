@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "hubspot-theme / Admin mode",
+      "type": "node",
+      "runtimeVersion": "10.15.1",
+      "request": "launch",
+      "trace": true,
+      "program": "${workspaceRoot}/index.js",
+      "runtimeExecutable": "${env:HOME}/.nvm/versions/node/v10.15.1/bin/node"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+<!--
+  isAvailableForNewContent: false
+-->
+{#
+
+This template tries to guess what language is preffered and then show other languages in language navigation.
+This also creates link to content in different language if content is available. If language version is not available
+switcher will not redirect anywhere else.
+
+Site is in Finnish => Show EN button
+Site is in English => Show FI button
+- new content has language version en
+- old content has language version en_US or en-us depending where to look
+
+Please refactor this right a way when better solution is available.
+
+#}
+
+{% if absolute_url is string_containing "/en-us/" %}
+  {% set site_language = 'en'  %}
+  {% set other_language = 'fi' %}
+  {% if content.translated_content['fi-fi'] %}
+    {% set other_language_url = '/' + content.translated_content['fi-fi'].slug %}
+  {% elif content.translated_content['fi'] %}
+    {% set other_language_url = '/' + content.translated_content['fi'].slug %}
+  {% else %}
+    {% set other_language_url = '#' %}
+  {% endif %}
+{% elif absolute_url is string_containing "/en/" %}
+  {% set site_language = 'en'  %}
+  {% set other_language = 'fi' %}
+  {% if content.translated_content['fi-fi'] %}
+    {% set other_language_url = '/' + content.translated_content['fi-fi'].slug %}
+  {% elif content.translated_content['fi'] %}
+    {% set other_language_url = '/' + content.translated_content['fi'].slug %}
+  {% else %}
+    {% set other_language_url = '#' %}
+  {% endif %}
+{% else %}
+  {% set site_language = 'fi' %}
+  {% set other_language = 'en' %}
+  {% if content.translated_content['en-us'] %}
+    {% set other_language_url = '/' + content.translated_content['en-us'].slug %}
+  {% elif content.translated_content['en'] %}
+    {% set other_language_url = '/' + content.translated_content['en'].slug %}
+  {% else %}
+    {% set other_language_url = '#' %}
+  {% endif %}
+{% endif %}
+
+{% if absolute_url is string_containing "/blogi" %}
+  {% set other_language_url = '/en/blog' %}
+{% elif absolute_url is string_containing "/en/blog" %}
+  {% set other_language_url = '/blogi' %}
+{% endif %}

@@ -1,0 +1,19 @@
+@function z($key) {
+  @if map-has-key($z-levels, $key) {
+    @return map-get($z-levels, $key);
+  }
+
+  @error 'Unknown `#{$key}` in $colors.';
+
+  @return null;
+}
+
+@function font-w($key) {
+  @if map-has-key($font-weights, $key) {
+    @return map-get($font-weights, $key);
+  }
+
+  @error 'Unknown `#{$key}` in $colors.';
+
+  @return null;
+}

@@ -1,0 +1,7 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  "scss.validate": false, // Consider enabling when VS Code starts supporting newer scss (currently sass version <= 3.2)
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  } // Yes, please
+}

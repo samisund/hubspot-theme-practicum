@@ -1,0 +1,37 @@
+.header {
+
+  &__logo {
+    display: block;
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__quote {
+    margin-bottom: 20px;
+  }
+
+  .hs-menu-wrapper {
+
+    ul {
+
+      li {
+        list-style: none;
+      }
+    }
+
+    &.hs-menu-flow-horizontal {
+
+      ul {
+
+        li {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

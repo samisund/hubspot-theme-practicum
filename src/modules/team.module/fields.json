@@ -1,0 +1,97 @@
+[
+  {
+    "type": "text",
+    "id": "36b6084e-50fe-c0d7-c910-0757b723b364",
+    "validation_regex": "",
+    "label": "Headline",
+    "name": "headline",
+    "default": "Our team",
+    "placeholder": ""
+  },
+  {
+    "type": "group",
+    "id": "1aac51a1-c5f3-4531-ed6f-5b332ca2e791",
+    "label": "Members",
+    "children": [
+      {
+        "type": "text",
+        "id": "454b2600-2d82-6670-689e-514306a3fdbd",
+        "validation_regex": "",
+        "label": "Name",
+        "name": "member_name",
+        "default": "Example name"
+      },
+      {
+        "type": "text",
+        "id": "741be353-bc34-f827-aced-ddea48b92dd2",
+        "validation_regex": "",
+        "label": "Job title",
+        "name": "member_jobtitle",
+        "default": "Rocket launcher"
+      },
+      {
+        "type": "image",
+        "id": "127cff76-0dc5-c42a-e758-94296e47e72a",
+        "default": {
+          "size_type": "auto",
+          "src": "",
+          "alt": null,
+          "loading": "lazy"
+        },
+        "resizable": true,
+        "responsive": true,
+        "show_loading": false,
+        "label": "Image",
+        "name": "member_photo"
+      }
+    ],
+    "name": "members",
+    "default": [
+      {
+        "member_name": "Example name",
+        "member_jobtitle": "Rocket launcher",
+        "member_photo": {
+          "size_type": "auto",
+          "src": "//f.hubspotusercontent30.net/hubfs/8763939/Horizontal%20headshot%20of%20an%20attractive%20african%20american%20business%20woman%20shot%20with%20shallow%20depth%20field..jpeg",
+          "alt": null,
+          "loading": "lazy"
+        }
+      },
+      {
+        "member_name": "Example name",
+        "member_jobtitle": "Rocket launcher",
+        "member_photo": {
+          "size_type": "auto",
+          "src": "//f.hubspotusercontent30.net/hubfs/8763939/Successful%20business%20woman%20looking%20confident%20and%20smiling.jpeg",
+          "alt": null,
+          "loading": "lazy"
+        }
+      },
+      {
+        "member_name": "Example name",
+        "member_jobtitle": "Rocket launcher",
+        "member_photo": {
+          "size_type": "auto",
+          "src": "//f.hubspotusercontent30.net/hubfs/8763939/Horizontal%20headshot%20of%20an%20attractive%20african%20american%20businessman%20shot%20with%20shallow%20depth%20field..jpeg",
+          "alt": null,
+          "loading": "lazy"
+        }
+      },
+      {
+        "member_name": "Example name",
+        "member_jobtitle": "Rocket launcher",
+        "member_photo": {
+          "size_type": "auto",
+          "src": "//f.hubspotusercontent30.net/hubfs/8763939/Closeup%20portrait%20of%20greedy%20banker%20executive%20CEO%20boss%2c%20corporate%20employee%20funny%20looking%20man%2c%20shaking%20holding%20dollar%20banknotes%20scared%20to%20loose%20money%2c%20suspicious%20isolated%20on%20white%20background.%20Expressions.jpeg",
+          "alt": null,
+          "loading": "lazy"
+        }
+      }
+    ],
+    "occurrence": {
+      "min": 1,
+      "default": 4,
+      "sorting_label_field": "454b2600-2d82-6670-689e-514306a3fdbd"
+    }
+  }
+]

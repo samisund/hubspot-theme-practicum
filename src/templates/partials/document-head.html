@@ -1,0 +1,95 @@
+<!--
+  label: Document Header
+  isAvailableForNewContent: false
+-->
+
+{% include "./language-switcher.html" %}
+
+<!doctype html>
+<html class="no-js" lang="{{(site_language) ? site_language : 'fi' }}">
+  <head>
+    <meta charset="utf-8">
+
+    {# Get developer parameter from url #}
+    {% set developer = request.query_dict.dev ? request.query_dict.dev : 'master' %}
+
+    {# This part is generating proper title text that will be used in title tag and social media meta-tags #}
+    {% set titleText = "" %}
+    {% if blog %}
+      {% if is_listing_view %}
+        {% set titleText = group.html_title + " | " + site_settings.company_name %}
+      {% else %}
+        {% set titleText = page_meta.html_title + " | " + content.topic_list|join(", ") + " | " + site_settings.company_name %}
+      {% endif %}
+    {% else %}
+      {% set titleText = page_meta.html_title + " | " + site_settings.company_name %}
+    {% endif %}
+
+    <title>{{ titleText }}</title>
+    <meta name="description" content="{{ group.description if is_listing_view else content.meta_description }}">
+    <link rel="canonical" href="{{ page_meta.canonical_url }}	">
+
+    {% if blog && content.blog_post_author %}
+    <meta name="author" content="{{ content.blog_post_author }}">
+    {% endif %}
+
+    <meta property="og:title" content="{{ titleText }}">
+    <meta property="og:description" content="{{ content.meta_description }}">
+    <meta property="og:image" content="{{ content.featured_image }}">
+    <meta property="og:url" content="{{ content.absolute_url }}" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="{{ titleText }}">
+    <meta name="twitter:description" content="{{ content.meta_description }}">
+
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//js.hsforms.net">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="dns-prefetch" href="//connect.facebook.net">
+    <link rel="dns-prefetch" href="//forms.hsforms.com">
+    <link rel="dns-prefetch" href="//app.hubspot.com">
+    <link rel="dns-prefetch" href="//js.hsadspixel.net">
+    <link rel="dns-prefetch" href="//js.hsleadflows.net">
+    <link rel="dns-prefetch" href="//js.hs-analytics.net">
+    <link rel="dns-prefetch" href="//api.hubspot.com">
+    <link rel="dns-prefetch" href="//www.facebook.com">
+    <link rel="dns-prefetch" href="//px.ads.linkedin.com">
+    <link rel="dns-prefetch" href="//api.hubapi.com">
+    <link rel="dns-prefetch" href="//track.hubspot.com">
+    <link href="//fonts.gstatic.com" rel="preconnect" crossorigin>
+
+    <link rel="icon" type="image/png" href="{{ get_asset_url('../../img/favicon.png') }}">
+
+    <style type="text/css">
+      /* stylelint-disable */
+      /*
+      {{ theme|pprint}}
+      */
+      :root {
+        --primary: {{ theme.colors.primary_color.color }};
+        --secondary: {{ theme.colors.secondary_color.color }};
+        --font-family: {{ theme.typography.text.font }};
+        --font-weight: {{ theme.typography.text.styles.font-weight }};
+        --font-size: {{ theme.typography.text.styles.font-size }};
+        --font-headings: {{ theme.typography.headings.font }};
+        --font-headings-weight: {{ theme.typography.headings.styles.font-weight }};
+      }
+
+      h1 {
+        font-size: {{ theme.typography.headings.size }}px;
+        font-family: {{ theme.typography.headings.font }};
+        color: {{ theme.typography.headings.color }};
+        text-decoration: {{ theme.typography.headings.styles.text-decoration }};
+        font-style: {{ theme.typography.headings.styles.font-style }};
+        font-weight: {{ theme.typography.headings.styles.font-weight }};
+      }
+      /* stylelint-enable */
+    </style>
+    {{ require_css(get_asset_url('../../static/css/master.css'), { async: true }) }}
+
+    {{ standard_header_includes }}
+  </head>
+  <body class="index" data-spy="scroll" data-target="#in_page_nav" data-offset="50">

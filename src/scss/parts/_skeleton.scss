@@ -1,0 +1,95 @@
+// Skeleton
+//sass-lint:disable class-name-format
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%; // browsers' default 16 px => we want use 10 px here.
+}
+
+html,
+body {
+  font-family: #{$font-family};
+  height: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  min-height: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+// iOS "clickable elements" fix for role="button"
+// see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+
+[role='button'] {
+  cursor: pointer;
+}
+
+//Set HubSpot widget container width to full
+
+.hs_cos_wrapper {
+  width: 100%;
+}
+
+.break-out {
+  width: 100vw;
+  position: relative;
+  left: calc(-1 * (100vw - 100%) / 2);
+}
+
+.no-scroll-mobile {
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media only screen and (min-width: $breakpoint-sm) {
+    max-width: 540px;
+  }
+
+  @media only screen and (min-width: $breakpoint-md) {
+    max-width: 720px;
+  }
+
+  @media only screen and (min-width: $breakpoint-lg) {
+    max-width: 960px;
+  }
+
+  @media only screen and (min-width: $breakpoint-xl) {
+    max-width: 1140px;
+  }
+
+  // This allows child elements to break out from container. For example to extend background color 100% width.
+
+  .break-out {
+    width: 100vw;
+    position: relative;
+    left: calc(-1 * (100vw - 100%) / 2);
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+//extend bootstrap default no-gutters class
+
+.container-fluid.no-gutters {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
