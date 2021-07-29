@@ -11,7 +11,7 @@
     <meta charset="utf-8">
 
     {# Get developer parameter from url #}
-    {% set developer = request.query_dict.dev ? request.query_dict.dev : 'master' %}
+    {% set developer = request.query_dict.dev ? request.query_dict.dev : 'main' %}
 
     {# This part is generating proper title text that will be used in title tag and social media meta-tags #}
     {% set titleText = "" %}
@@ -88,7 +88,7 @@
       }
       /* stylelint-enable */
     </style>
-    {{ require_css(get_asset_url('../../static/css/master.css'), { async: true }) }}
+    {{ require_css(get_asset_url('../../static/css/main.css'), { async: true }) }}
 
     {{ standard_header_includes }}
   </head>

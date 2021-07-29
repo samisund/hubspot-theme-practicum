@@ -25,15 +25,15 @@ module.exports = ({ account, autoupload, production, proxyUrl }) => {
   }
 
   if(!skipWarnings) {
-    // Assumes that 'master' is the production branch
+    // Assumes that 'main' is the production branch
     // If this is production branch, require --production flag
-    if(production && currentBranch !== 'master') {
-      console.log('Wrong branch. Use master branch for production files\n');
+    if(isProductionMode && currentBranch !== 'main') {
+      console.log('Wrong branch. Use main branch for production files\n');
       process.exit(1);
     }
 
-    if(currentBranch === 'master' && !production) {
-      console.log('Master (production!) branch needs to be built with `npm run build`');
+    if(currentBranch === 'main' && !isProductionMode) {
+      console.log('main (production!) branch needs to be built with `npm run build:prod`');
       console.log('For development purposes create another branch.');
       process.exit(1);
     }
@@ -42,8 +42,8 @@ module.exports = ({ account, autoupload, production, proxyUrl }) => {
   const config = {
     mode: isProductionMode ? 'production' : 'development',
     entry: {
-      js: './src/js/master.js',
-      css: './src/scss/master.scss'
+      js: './src/js/main.js',
+      css: './src/scss/main.scss'
     },
     output: {
       filename: 'static/js/[name].bundle.js',
@@ -153,7 +153,7 @@ module.exports = ({ account, autoupload, production, proxyUrl }) => {
     },
   };
 
-  if (!production && proxyUrl) {
+  if (!isProductionMode && proxyUrl) {
     config.plugins.push(new BrowserSyncPlugin({
       proxy: proxyUrl,
       serveStatic: [`dist/${currentBranch}/static/`],

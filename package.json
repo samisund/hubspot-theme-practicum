@@ -10,8 +10,8 @@
   },
   "scripts": {
     "start": "webpack --watch --env proxyUrl=http://hubspot-developers-1kcjf50-8763939.hs-sites.com/webpack-test",
-    "build:dev": "webpack --mode=production --watch --env account=8763939 --env autoupload",
-    "build:prod": "webpack --mode=production --watch --env production --env account=8763939 --env autoupload"
+    "build:dev": "webpack --watch --env account=8763939 --env autoupload",
+    "build:prod": "NODE_ENV='production' webpack --watch --env account=8763939 --env autoupload"
   },
   "devDependencies": {
     "@babel/core": "^7.14.0",
